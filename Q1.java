@@ -35,17 +35,31 @@ public class Q1 {
         //Optimization 1
             //Approach : if a number is intented to be divisible it can be divided till its sqaure root,
             // if not then the number is not divisible by any number.
-            int count = 0;
-            for (int div = 2 ; div * div <= n ; div++){
-                if (n % div ==0){
-                    count ++;
+//            int count = 0;
+//            for (int div = 2 ; div * div <= n ; div++){
+//                if (n % div ==0){
+//                    count ++;
+//
+//                }
+//            }
+//            if (count == 0){
+//                System.out.println("prime");
+//            }else{
+//                System.out.println("Not prime");
+//            }
 
+            //Optimisation 2(best): Check for only 1 divisor before the square root if it is then the number is not prime
+            int count = 0;
+            for(int div = 2 ; div* div <=n ; div++){
+                if(n % div ==0){
+                    count++;
+                    break;
                 }
             }
-            if (count == 0){
-                System.out.println("prime");
+            if(count==0){
+                System.out.println("Prime Number");
             }else{
-                System.out.println("Not prime");
+                System.out.println("Not Prime");
             }
         }
 
